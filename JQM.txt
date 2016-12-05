@@ -1,0 +1,112 @@
+
+網頁手機最佳化字型
+http://www.wfublog.com/2014/02/font-family-chinese-cross-platform.html
+
+JQM 0-0
+http://demos.jquerymobile.com/1.4.0/pages/
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/[version]/jquery.mobile-[version].min.css" />
+	<script src="http://code.jquery.com/jquery-[version].min.js"></script>
+	<script src="http://code.jquery.com/mobile/[version]/jquery.mobile-[version].min.js"></script>
+	
+	<div data-role ='page'>
+	<div data-role='header'>
+	
+	
+	多拉Ａ夢 CSS3:
+	http://purecss3.net/doraemon/doraemon_css3.html
+	
+	
+	html5 : data- (html5 客製化 已知的tag 擴充功能使用
+	data-title  > header hi > title 
+	
+	  <a href="#detail" data-role='button'> Goto Detail</a> 
+	  <div id="home" data-role="page"  data-title='HOME'>
+		<div data-role="header">
+		
+		不要白費工夫或吃力不討好
+		
+( 1.5 )
+  asy 非同步  ： json  (網路端常用）
+  一般code 單一執行緒 , 為同步 , 執行A 時跳到 Ｂ做一做做完在繼續處理 （同一台內的程式常用）
+  
+  非同步處理 多執行緒 ： Ａ叫 Ｂ 完後, 先往下做其他的事,  等到Ｂ做完回傳回來response 在做他的 （Ａ 開啟Ｂ新執行緒, B做完後回來叫我  A的callback method
+） 
+
+哪些標籤是會幫你送同步請求 （object C 哪些也要知道）
+哪些 ...        非同步
+Ｑ：  同步 ：<a href> , <form action="url" ....input type='submit'> 
+ 非同步 ：android http://get , http://post -> 藏在不同的執行緒下 , IOS : 送ＡSy的請求
+ 		web: image請求（還沒顯示圖片,後面文字先出來）, audio -> 影音多媒體的 html5 ,video, link,  script  
+ 		第一個是同步, 第二個以後就是非同步 （css,js, 圖...）  chrome> 檢查 >network  
+ 		是否同步是指 回應是否同步
+ 		
+ 		1-5  -> jqueryMobile a herf 去到 1-5-1 , 1-5-1是非同步請求, 1-5 還在背景執行
+ 		
+ 		使用framework 時要注意 會把原本的tag屬性蓋掉 ,所以 程式處理架構會被改變,  改成非同步執行時會有一些問題, 比方說該呼叫callback 時因為他不會進入callback (改變執行行為）會影響後面的執行
+
+ 同步變非同步 ： ajax ： asynchronized javascript and XML  (原始技術 ：XMLHttpRequest)	data-ajax : 使用非同步處理	
+ 在jquery 中預設都是 
+
+
+整理文件 ：比對 兩邊用
+
+jquery ajax 向googlemap  / geocoder 請求
+
+webservicex 網站 （）我要查天氣 getcitybycountry
+
+
+CWB 中央氣象局 ＸＭＬ opendata  : http://opendata.cwb.gov.tw/index 
+				第二個 ：http://worldweather.wmo.int/tc/dataguide.html
+				https://openweathermap.org/api
+				
+<a href="Sample1-5.html" data-role="button" data-transition="slide" data-direction="reverse" >GoBack 1-5</a>
+<a href="Sample1-5.html" data-role="button" data-transition="slide" data-direction="reverse" data-ajax='false'>GoBack 1-5 without ajax</a>
+
+jqueryUI MOBILE  如何改介面
+
+電腦有乙太網路 所以 可以   （手機 ：連相同的wifi網路）
+
+
+(1-6)
+      	<a href="Sample1-6-1.html" data-role="button" data-icon="arrow-r" data-transition="flip">Go to Sample1-6-1.html with AJAX</a>
+  
+
+(1-7)
+      <a href="mailto:patty_tai@uuu.com.tw" data-role="button" >Mail To</a>
+        <a href="sms0987654321" data-role="button" >SMS To</a>
+        <a href="mailto:admin@uuu.com.tw?
+   cc=patty_tai@uuu.com.tw&subject=Test%20Mail&body=This%20is
+   %20a%20test%20from%20HTML5" data-role='button'>Mail to Patty
+   with Content</a>
+<a href="tel:0225149191" data-role='button'>Make Phone Call to
+   UCOM</a>
+<a href="sms:0987654321?body=Test%20Data" data-role='button'>  Send MSG to Someone</a>
+
+
+
+(1-8)
+<a href="#" data-role="button" data-icon="back" data-rel="back">Go back</a>
+
+  	<a href="Sample1-8-1.html" data-role="button" >Go to Sample1-8-1.html with default</a>
+            <a href="Sample1-8-1.html" data-role="button" data-transition='fade'>Go to Sample1-8-1.html with fade</a>
+            <a href="Sample1-8-1.html" data-role="button" data-transition='flip'>Go to Sample1-8-1.html with flip</a>
+            <a href="Sample1-8-1.html" data-role="button" data-transition='pop'>Go to Sample1-8-1.html with pop</a>
+            <a href="Sample1-8-1.html" data-role="button" data-transition='slide'>Go to Sample1-8-1.html with slide</a>
+            <a href="Sample1-8-1.html" data-role="button" data-transition='slidedown'>Go to Sample1-8-1.html with slidedown</a>
+            <a href="Sample1-8-1.html" data-role="button" data-transition='slideup'>Go to Sample1-8-1.html with slideup</a>
+            <a href="Sample1-8-1.html" data-role="button" data-transition='turn'>Go to Sample1-8-1.html with turn</a>
+            <a href="Sample1-8-1.html" data-role="button" data-transition='flow'>Go to Sample1-8-1.html with flow</a>
+            <a href="Sample1-8-1.html" data-role="button" data-transition='slidefade'>Go to Sample1-8-1.html with slidefade</a>
+            <a href="Sample1-8-1.html" data-role="button" data-transition='non'>Go to Sample1-8-1.html with transition</a>
+
+(1-9)
+jquery Mobile 跟apple app 一樣, A->B , 由 B-> A 第二頁的東西(B)會刪掉 	, (但chorme 不准 ，他會做一些cache)
+效能調笑 ： 會把 常用的兩夜cache j 留存下來
+什麼要加 cache cahce 有時候亂做會更慢.... 要注意
+
+  
+				
+				
+		

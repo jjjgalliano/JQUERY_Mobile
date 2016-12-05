@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML5 APP Traning - Compass</title>
+	<link rel="stylesheet" href="css/jquery.mobile.css" />
+    <style>
+    h1{
+      text-align:center;
+    }
+    #compass1{
+        background:url("images/compass1.png") no-repeat center center;
+    }
+
+    #compass2{
+    	display:block;
+		margin:2px auto;
+		animation: mymove infinite;
+		animation-duration: 2s;
+    }
+      
+    #degree{
+      text-align:center;
+      font-size:60px;
+      font-family:Georgia, "Times New Roman", Times, serif;
+    }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+  	$(document).ready(function(e) {
+  		$(document).on("deviceready", deviceReadyHandler);
+    });
+  	
+  	function deviceReadyHandler(){
+  	}
+  	
+  	$(document).on("pageinit", "#home", pageInitHandler);
+  	
+  	function pageInitHandler(){
+  	}
+  	
+  	
+  	//測試rotate 
+  	var compass2, n=0;
+  	var rotINT;
+  	function rotateHandler(){
+		compass2 = document.getElementById("compass2");
+		clearInterval(rotINT);
+		rotINT=setInterval("startRotate()",0.1);
+  	}  	
+	
+	function startRotate(){
+		n=n+1;
+		compass2.style.transform="rotate(" + n + "deg)";
+		compass2.style.webkitTransform="rotate(" + n + "deg)";
+		compass2.style.OTransform="rotate(" + n + "deg)";
+		compass2.style.MozTransform="rotate(" + n + "deg)";
+		$("#degree").text(n);
+		if (n % 90 == 0){
+			clearInterval(rotINT);
+			if (n>=360) n=0;
+		}
+	}	
+	
+    </script>
+	<script src="js/jquery.mobile.js"></script>
+    <script src="cordova.js"></script>
+  </head>
+  <body>
+    <div data-role="page" id="home">
+      <div data-role="header" data-position="fixed">
+        <h1>Compass</h1>
+      </div>
+      <div data-role="content" id="content">
+        <h1>北</h1>
+        <div id="compass1">
+        	<img id="compass2" alt="compass" src="images/compass2.png">
+        </div>
+	    <div><h1 id="degree">0</h1></div>
+	    <a href="#" data-role="button" onclick="rotateHandler()">Rotate</a>
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <h1>PhoneGap APP TRAINING</h1>
+      </div>
+    </div>
+    
+  </body>
+</html>

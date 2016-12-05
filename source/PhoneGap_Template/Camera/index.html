@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HTML5 APP Traning - Camera</title>
+	<link rel="stylesheet" href="css/jquery.mobile.css" />
+    <style>
+    #photo{
+		display:block;
+		width:250px;
+		height:250px;
+		margin:10px auto;
+		background:url("logo.png") no-repeat,#EEE;
+		background-size:50px 50px, contain;
+		background-position:90% 90%, 0;
+		padding:10px;
+		border:1px solid #999;
+		box-shadow:5px 5px 5px #666;
+	}
+	
+	#logo{
+		display:block;
+		width:50px;
+		height:50px;
+		background:url("logo.png") no-repeat;
+		background-size:contain;
+		position:absolute;
+		left:45px;
+		top:160px;
+	}
+    </style>
+	<script src="js/jquery.js"></script>
+    <script>
+	$(document).ready(function(e) {
+		$(document).on("deviceready", devicereadyHandler);
+    });
+	
+	function devicereadyHandler()
+	{
+	}
+	
+	$(document).on("pageinit", "#home", pageInitHandler);
+	
+	function pageInitHandler()
+	{
+		//alert("pageInitHandler");
+	}
+    </script>
+	<script src="js/jquery.mobile.js"></script>
+    <script src="cordova.js"></script>
+	
+</head>
+<body>
+
+<div data-role="page" id="home">
+	<div data-role="header" data-position="fixed">
+    	<h1>Camera</h1>
+    </div>
+    <div data-role="content" id="content">
+    
+    	<h1>Camera</h1>
+        
+        <a href="#" id="logo"></a>
+        <img id="photo">
+        <a href="#" data-role="button" data-icon="plus" id="photoButton">SHOOT</a>
+        <a href="#" data-role="button" data-icon="plus" id="shootButton">SHOOT</a>
+    
+    </div>
+	<div data-role="footer" data-position="fixed">
+    	<h1>PhoneGap APP TRAINING</h1>
+    </div>
+</div>
+
+
+</body>
+</html>

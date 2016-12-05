@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>images
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>HTML5 APP Traning - Media</title>
+        <link rel="stylesheet" href="css/jquery.mobile.css" />
+        <style>
+			h1 {
+				text-align: center;
+			}
+
+			img {
+				background: #EEE;
+				padding: 10px;
+				border: 1px solid #999;
+				margin: 0 auto;
+				width: 200px;
+				height: 200px;
+				box-shadow: 0 0 10px #999;
+				display: block;
+			}
+
+            .ui-icon-play:after{
+                background: url(images/media-play.png);
+                background-size: contain;
+            }
+
+            .ui-icon-pause:after{
+                background: url(images/media-pause.png);
+                background-size: contain;
+            }
+
+            .ui-icon-stop:after{
+                background: url(images/media-stop.png);
+                background-size: contain;
+            }
+
+        </style>			
+        <script src="js/jquery.js"></script>
+        <script>
+            var media;
+
+            $(document).on("pageinit", "#home", pageInitHandler);
+
+            function pageInitHandler(){
+                $("#playButton").on("click", playButtonHandler);
+                $("#pauseButton").on("click", pauseButtonHandler);
+                $("#stopButton").on("click", stopButtonHandler);
+            }
+
+            function playButtonHandler(){
+            
+            }
+
+            function pauseButtonHandler(){
+            
+            }
+
+            function stopButtonHandler(){
+
+            }
+
+            function successHandler(){
+                navigator.notificaton.alert("Play Success!", null, "SUCCESS", "OK");
+            }
+
+            function errorHandler(){
+                navigator.notificaton.alert("Play Failed!", null, "ERROR", "OK");
+            }
+        </script>
+        <script src="js/jquery.mobile.js"></script>
+        <script src="cordova.js"></script>
+
+    </head>
+    <body>
+
+        <div data-role="page" id="home">
+            <div data-role="header" data-position="fixed">
+                <h1>Media</h1>
+            </div>
+            <div data-role="content" id="content">
+
+                <h1>Audio Player</h1>
+                <img src="images/cover.jpg">
+                <p id="status"></p>
+                <div align="center">
+                <a href="#" data-inline="true" data-mini="true" data-role="button" id="playButton" data-icon="play">PLAY</a>
+                <a href="#" data-inline="true" data-mini="true" data-role="button" id="pauseButton" data-icon="pause">PAUSE</a>
+                <a href="#" data-inline="true" data-mini="true" data-role="button" id="stopButton" data-icon="stop">STOP</a>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>PhoneGap APP TRAINING</h1>
+            </div>
+        </div>
+
+    </body>
+</html>

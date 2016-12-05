@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HTML5 APP Traning - Example</title>
+	<link rel="stylesheet" href="css/jquery.mobile.css" />
+    <script src="cordova.js"></script>
+	<script src="js/jquery.js"></script>
+    <script>
+	$(document).ready(function(e) {
+		$(document).on("deviceready", deviceReadyHandler);
+    });
+	
+	function deviceReadyHandler(){
+	}
+	
+	$(document).on("pageinit", "#home", pageInitHandler);
+	
+	function pageInitHandler(){
+		$("#convertButton").on("click", convertHandler);
+	}
+        
+    function convertHandler(){
+        /*
+         務必在config.xml加上：
+            <access origin="www.webservicex.net" subdomains="true"/>   <!--browserOnly="true" -->
+         */
+
+
+    }	
+</script>
+<script src="js/jquery.mobile.js"></script>
+	
+</head>
+<body>
+
+<div data-role="page" id="home">
+	<div data-role="header">
+    	<h1>Example</h1>
+    </div>
+    <div data-role="content" id="content">
+        <div data-role="fieldcontain">
+            <label for="fromInput">From:</label>
+            <input type="text" id="fromInput" name="fromInput" value="USD">
+        </div>
+        <div data-role="fieldcontain">
+            <label for="name">To:</label>
+            <input type="text" name="toInput" id="toInput" value="TWD">
+        </div>
+        <a id="convertButton" data-role="button" href="#">Get ConversionRate</a>
+        <div data-role="fieldcontain">
+            <label for="name">Conversion Rate:</label>
+            <input type="text" name="result" id="result" value="30" readonly data-theme='e'>
+        </div>
+    </div>
+	<div data-role="footer" data-position="fixed">
+    	<h1>PhoneGap APP TRAINING</h1>
+    </div>
+</div>
+
+
+</body>
+</html>

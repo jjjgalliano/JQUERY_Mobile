@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>HTML5 APP Traning - Geolocation</title>
+		<link rel="stylesheet" href="css/jquery.mobile.css" />
+        <style>
+			#info {
+				border: 1px solid black;
+				height: 90px;
+			}
+
+			#googlemap {
+				background: #CCC;
+				height: 25em;
+				border: 1px solid black;
+				padding: 10px;
+				-webkit-box-shadow: 0px 5px 5px #999;
+				-moz-box-shadow: 0px 5px 5px #999;
+				box-shadow: 0px 5px 5px #999;
+				text-shadow: 0px 2px 0px #FFF;
+			}
+        </style>
+        <script type="text/javascript" 
+        	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArooN0FF4v1YAYUgq_-kkZlNxK0iGGYbE&sensor=false"></script>
+        <script src="js/jquery.js"></script>
+        <script>
+			var times = 0; //紀錄watchPosition的次數
+			var watchID = undefined; //記錄定位服務的參考
+			var latlng = undefined;  //記錄google.maps.LatLng, 經緯度
+			
+			var map = undefined; //地圖
+			var mapMarker = undefined; //大頭針
+			var address = undefined;
+
+			$(document).ready(function(e) {
+				$(document).on("deviceready", deviceReadyHandler);
+			});
+
+			function deviceReadyHandler() {
+
+			}
+
+
+			$(document).on("pageinit", "#home", pageInitHandler);
+			$(document).on("pageinit", "#mapview", mapInitHandler);
+
+			/*home page init...*/
+			function pageInitHandler() {
+				$("#watchButton").on("click", watchButtonHandler);
+				$("#stopButton").on("click", stopButtonHandler);
+			}
+
+			function watchButtonHandler() {
+ 
+			}
+
+			function successHandler(e) {
+
+			}
+
+			function errorHandler() {
+ 
+ 			}
+
+			function stopButtonHandler() {
+
+			}
+
+			/*map View init...*/
+			function mapInitHandler() {
+				$("#mapview").on("pageshow", mapViewShowHandler);
+			}
+
+			function mapViewShowHandler() {
+			    
+				if (latlng==undefined) {
+					var msg = "This service need GPS sensor.";
+					if (navigator.notification) {
+						navigator.notification.alert(msg, null, "Warning");
+					} else {
+						alert(msg);
+					}
+					return;
+				}else{
+                    if(watchID){
+                        stopButtonHandler();
+                    }
+                }
+
+                address = undefined;
+                try{
+                    var urlPath = "http://maps.googleapis.com/maps/api/geocode/json?latlng=" +
+                        latlng.lat() + "," + latlng.lng() + "&sensor=false";
+                    //alert(urlPath);
+                    $.ajax({
+                        url: urlPath,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(jsonData) {
+                           address = jsonData.results[0].formatted_address;
+                           var infowindow = new google.maps.InfoWindow(
+                                {content: "<div>"+address+"</div>", maxWidth: 180});
+                           google.maps.event.clearListeners(mapMarker, 'click');
+                           google.maps.event.addListener(mapMarker, 'click',
+                             function() {infowindow.open(map, mapMarker);}
+                           );
+                        },
+                        error: function(err) {
+                           alert("Error: " + err);
+                        }
+                    });
+
+                }catch(err){
+                    console.log("There was an error to geocode: " + err.message + "!");
+                }
+
+				if (map) {
+					map.panTo(latlng);
+					mapMarker.setPosition(latlng);
+				} else {
+					var mapOptions = {
+						zoom : 15,
+						center : latlng,
+						mapTypeId : google.maps.MapTypeId.ROADMAP
+					};
+					map = new google.maps.Map($("#googlemap").get(0), mapOptions);
+					mapMarker = new google.maps.Marker({
+						position : latlng,
+                        map: map
+					});
+
+				}
+			}
+
+        </script>
+	<script src="js/jquery.mobile.js"></script>
+    <script src="cordova.js"></script>
+
+    </head>
+    <body>
+
+        <div data-role="page" id="home" style='width:90%;padding:1em'>
+            <div data-role="header" data-position="fixed" data-fullscreen="true">
+                <h1>Geolocation</h1>
+            </div>
+            <div data-role="content" id="content">
+
+                <h1>Your position information:</h1>
+                <label for="location">Location:</label>
+                <input type="text" id="location" readonly>
+
+                <p id="info"></p>
+
+                <a href="#" id="watchButton" data-role="button">Start Watch</a>
+                <a href="#" id="stopButton" data-role="button">Stop Watch</a>
+                <a href="#mapview" id="watchMapButton" data-role="button">WatchMap</a>
+
+            </div>
+            <div data-role="footer" data-position="fixed" data-fullscreen="true">
+                <h1>HTML5 APP TRAINING</h1>
+            </div>
+        </div>
+
+        <div data-role="page" id= "mapview" >
+            <div data-role="header" data-fullscreen="true" data-add-back-btn="true" >
+                <h1>Map</h1>
+            </div>
+            <div data-role="content">
+                <div id="googlemap"></div>
+            </div>
+            <div data-role="footer" data-position="fixed" data-fullscreen="true">
+                <h1>PhoneGap APP TRAINING</h1>
+            </div>
+        </div>
+    </body>
+</html>
