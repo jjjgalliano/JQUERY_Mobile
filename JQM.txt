@@ -1,4 +1,6 @@
 
+jquery Mobile :
+
 網頁手機最佳化字型
 http://www.wfublog.com/2014/02/font-family-chinese-cross-platform.html
 
@@ -106,7 +108,238 @@ jquery Mobile 跟apple app 一樣, A->B , 由 B-> A 第二頁的東西(B)會刪�
 效能調笑 ： 會把 常用的兩夜cache j 留存下來
 什麼要加 cache cahce 有時候亂做會更慢.... 要注意
 
+
+
+(2-1)
+TOOLBAR : MEANS FOOTER ,HEADER
+position:fixed 
+
+(2-2)
+full-screen : header 不佔空間, 變透明 ->
+<div data-role="header" data-position="fixed" data-fullscreen='true'>
+yotobashi
+
+沒有工具的形況下 什麼是設計
   
+  iphone 大頭針不是紅色會被退件, （除了現在位置上可以改）
+  第一版會用系統建議的 navigation bar :顏色 
+  
+  網頁程式有些要release （javascript 純ＯＯ？？？？ 都是多型型別 所以吃記憶體 jquery  可以做statric） -> 看jquery
+			(同步處理跟非同步處理)	
+			jquery source 有註解
+			
+(2-3)header 中的超連結 會變成button
+<div data-role="header">
+	 <a href="#" data-rel="back" data-icon="back">BACK</a>
+	 
+	 
+	 iphone 可能被退件的理由：不夠高雅 , 還有記憶體問題 -> IOS deisgn pattern
+	 看設計的書
 				
 				
+javascript 不會有overloading  -> 參數可無限多; 	
+
+(2-4)toolbar
+http://demos.jquerymobile.com/1.4.5/toolbar/
+
+data-add-back-btn="true"  （1.4 後放置位置不同 ）
+
+jqueryMobile theme: (配完色下載）
+http://themeroller.jquerymobile.com/
+
+專門教學ＩＯＳ的  appcoda：
+http://www.appcoda.com/
+
+（2-6)
+
+
+(2-7)Andoird : 放 header (navigation.appname 可以看是什麼樣的瀏覽器)
+超過五個就會變成像 line的排版
+<div data-role="footer" data-position="fixed">
+    	<div data-role="navbar" data-iconpos="top" >
+            <ul>
+                <li><a href="#page1" data-icon="gear" data-transition="none">PAGE1</a></li>
+                <li><a href="#page2" data-icon="grid" data-transition="none">PAGE2</a></li>
+                <li><a href="#page3" data-icon="info" data-transition="none">PAGE3</a></li>
+                <li><a href="#page4" data-icon="star" data-transition="none">PAGE4</a></li>
+                <li><a href="#page5" data-icon="info" data-transition="none">PAGE5</a></li>
+                <li><a href="#page6" data-icon="star" data-transition="none">PAGE6</a></li>
+            </ul>
+        </div>
+    </div>
+    
+
+chape 3: button : 超連結
+
+（3-1)
+蝦皮拍賣 ： 登入適用手機號碼 跟臨時帳號  （類似line , 而且一開始釋出手機版 ,才變成網路版）
+line : 手機帳號
+    
+    因為jquerymobile 要瀏覽器支援 html5 
+    比較舊的瀏覽器可以用這個方式模擬 
+     class="ui-button "   ui 開頭
+     
+     
+    (3-4) 客製化icon:
+    18*18 以上, 一般用 32*32 或 36*36
+    
+    collection view  ~=  gridview
+     
+     
+     
+(4) 
+清單 
+ul> li  (ol>li)
+table tr, td
+GridView , UICollectionView  (例如產品清單, ios5.0, ios6.0)  
+     
+     
+pholymothesom : （javascript  OO)
+ 
+用上層型別宣告變數,參考到下層型別建立的物件 （多型） ,只能使用到上層型別的method
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+javascript ::  must study :: (MDN)
+https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/A_re-introduction_to_JavaScript
+https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript    		
 		
+		
+		
+		音樂App
+		bpm (音樂節拍) 節拍配合 運動器材 穩定的步調
+		
+		
+		http://blog.xuite.net/lapuda.chen/PaulBlog/221866406-%E5%A6%82%E6%9E%9C%E7%9C%8B%E4%BA%86%E6%AD%A4%E6%96%87%E4%BD%A0%E9%82%84%E4%B8%8D%E6%87%82%E5%82%85%E9%87%8C%E8%91%89%E8%AE%8A%E6%8F%9B(Fourier+Transform)%EF%BC%8C%E9%82%A3%E5%B0%B1%E9%81%8E%E4%BE%86%E6%8E%90%E6%AD%BB%E6%88%91%E5%90%A7!
+		音樂要用到： 傅立葉轉換  (音頻換因播)
+		apple 官網有fucntion 
+		運動市場 跟  不同bpm適合馬拉松的配數 
+		
+		
+		整理 一下 
+		運算子 ：（java 有七項） 邏輯 比較 左右移  三元
+		
+		property : object-C 的封裝
+		有努力就會用到 javascript / OO  
+		唸書 還有基本
+		
+		
+		html 那些是輸入項（三項）
+		input select textarea 
+		
+		其他type 不同
+		
+		
+		IOS 上的輸入項
+		text textfiled  picker
+		
+		andorid
+		
+		MQTT  android /IOS/JQM
+
+(5)
+
+收鍵盤 跳鍵盤  把要輸入的欄位往上提不會被鍵盤遮住 
+
+手機版網頁 ：keyboard type 
+
+<div data-role="fieldcontain">
+	<label>age </label>
+	<input type="range" id="age" name="age" min=1 max=150 value="20">
+</div>
+
+<div data-role="fieldcontain">
+	<div data-role="rangeslider">
+	<label>Min~max </label>
+		<input type ="range" id="min"  min=100 max=500 value="150">
+		<input type ="range" id="max"  min=100 max=500 value="300" >
+	</div>
+</div>
+
+
+// name 是只有輸入項才可以加的 input, select ..... ,其他都只能加id
+//lable  "for" 
+<div data-role="fieldcontain">
+<label> Size(單選)</label>
+	<div data-role="controlgroup" data-type="horizontal">
+		<input type ="radio" id="xs" value='xs' name="size"><label for>XS </label>
+		<input type ="radio" id="s" value='s' name="size"><label for>S </label>
+		<input type ="radio" id="m" value='m' name="size" ><label for>M </label>
+		<input type ="radio" id="l" value='l' name="size"><label for>L </label>
+ 		<input type ="radio" id="xl" value='xl' name="size"><label for>XL </label>		
+	</div>
+</div>
+
+<div data-role="fieldcontain">
+<label> Hobby(多選)</label>
+	<div data-role="controlgroup" data-type="horizontal">
+		<input type ="checkbox" id="xs" value='xs' name="size"><label for>XS </label>
+		<input type ="checkbox" id="s" value='s' name="size"><label for>S </label>
+		<input type ="checkbox" id="m" value='m' name="size" ><label for>M </label>
+		<input type ="checkbox" id="l" value='l' name="size"><label for>L </label>
+ 		<input type ="checkbox" id="xl" value='xl' name="size"><label for>XL </label>		
+	</div>
+</div>
+
+//iphone 沒有radio button ,那是網頁才有的
+//沒有辦法控制home健 寫得出來也無法上架
+
+使用者 min > max 會選出這樣的狀況
+（也可以用兩個 scroller point ) 
+所以購物網都適用 chekcbox 自訂範圍
+
+jquery mobile 的 input type  
+input type="time" id ="birth" name ="birth" 
+type = number , date  (可以選)  
+type = range (slider bar )
+
+(id 前端用的  name : 後端用的)
+
+
+正規表示式 （原先是銀行使用,unit 系統就有的）
+java:
+https://www.javaworld.com.tw/jute/post/view?bid=20&id=130126
+http://www.ewdna.com/2009/01/javautilregexpatternmatcher.html
+http://regexlib.com/Search.aspx?k=credit%20card
+
+javascript 
+https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Regular_Expressions
+regexp
+
+?? bootstrape vs jqm 為什麼前者比較有名
+data-native-menu="false"  為了讓網頁, android, iphone 三種平台顯示的方式一樣（不然文件要做不同的）
+
+
+
+第三方備份 (google Drive）
+
+select : (ios: pickerview)
+<div data-role="fieldcontain">
+	<label for="gender">Gender</gender>
+	<select id ="gender" data-native-menu="false">
+	    <option>請選擇..</option>  // darmin 假選項
+		<option>Male</option> 
+		<option>Female</option>
+	</select>
+</div>
+
+
+//二選一的話 slider 是指switch // 三項的話會卡住
+<div data-role="fieldcontain">
+	<label for="gender">Gender</gender>
+	<select id ="gender" data-native-menu="false" data-role="slider">
+		<option>Male</option> 
+		<option>Female</option>
+	</select>
+</div>
+
+
+(6) 列表 ：tableview controller 
+
+
+
+fb 影像處理程式
+影音處理的話 還是要用到native code -> 記憶體管理
+
+
+
