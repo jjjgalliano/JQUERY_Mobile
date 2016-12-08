@@ -341,5 +341,170 @@ select : (ios: pickerview)
 fb 影像處理程式
 影音處理的話 還是要用到native code -> 記憶體管理
 
+JQueryMobile 
+
+ ol 或ul
+ 	li   /li
+ /ol or /ul
+
+apple  app coda customise
+http://www.appcoda.com/customize-table-view-cells-for-uitableview/
+
+javascript的安全性
+http://openhome.cc/Gossip/JavaScript/SecurityConstraint.html
+http://www.ibm.com/developerworks/cn/rational/r-cn-appscanjavascriptleak/
+https://read01.com/3BeJ4.html
+http://www.gss.com.tw/index.php/security/1014-javascript
+http://blog.trendmicro.com.tw/?p=2442
+http://blog.roodo.com/rocksaying/archives/2636558.html
 
 
+1	var my_JSON_object = !(/[^,:{}\[\]0-9.\-+Eaeflnr-u \n\r\t]/.test(
+2	text.replace(/"(\\.|[^"\\])*"/g, '')))
+3	&& eval('(' + text + ')');
+
+machine code (c/ objectC) 到不同的環境Ｏ就不能編譯
+2009 首次進入應用程式的50名
+
+RoR!!!!
+
+(6-4)tableview-有 搜尋列功能 :
+<div data-role="content">
+    	<ul data-role="listview" data-filter="true" data-filter-placeholder="請輸入關鍵字">
+        	<li data-filtertext="client server” ><a href="#">jQuery</a></li>
+…..
+
+java7後出現一個安全性漏洞 尤其在 client applet 2013年 
+
+
+Facebook login using swift2.0 and ios9.1
+http://stackoverflow.com/questions/33481462/how-can-i-do-a-facebook-login-using-swift-2-0-and-ios-9-1
+https://developers.facebook.com/docs/facebook-login/ios#setup
+
+facebook IOS sdk : https://github.com/facebook/facebook-sdk-swift/releases
+(舊版)
+https://developers.facebook.com/docs/ios/downloads 
+
+2000年前後
+MSSQL blaster (computer worm)
+iloveyou worm
+
+
+facebook tutorial 
+http://studyswift.blogspot.tw/2016/01/facebook-sdk-and-swift-create-facebook.html
+	
+http://studyswift.blogspot.tw/2016/01/facebook-sdk-and-swift-create-facebook.html
+
+<ul data-role="listview" data-filter="true" data-filter-placeholder="Keyword" data-autodividers="true">
+
+
+(6-7)
+Css3 (... ellipsis): text-overflow: ellipsis/clip
+
+
+=====
+online booking system
+booking : place  , time schedule (and make appointment)
+
+
+=== MQTT  dashboard (IoT)
+http://blog.maxkit.com.tw/2014/01/mqtt.html
+
+map , 權限 ,裝置
+
+====
+
+IOS undo manager : (尤其有刪除功能）
+https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UndoArchitecture/Articles/UndoManager.html
+
+
+IOS redo manager  :
+https://developer.apple.com/library/content/documentation/General/Conceptual/Devpedia-CocoaApp/UndoManager.html
+
+==== JQM :  reflow , 或  ColumnToggle (!!! 變小的時候哪些欄位會縮小)
+http://demos.jquerymobile.com/1.4.1/table-column-toggle/
+
+<table data-role="table" data-mode="columntoggle" id="my-table">
+<th data-priority="1">I'm very important</th>
+
+
+===== AppCoda ======= 
+
+code4App :
+
+
+
+
+client端 存資料 ： storage, cookie 
+http://huan-lin.blogspot.com/2012/06/html5-web-storage.html
+
+====android  for Eclipse ====  JQM
+windows> Device  連接 android
+
+http://www.inote.tw/how-to-set-android-development-environment-with-android-sdk
+
+android sdk (command line )
+android 4.4.2 最穩定 （寶可夢） 
+
+====(7)
+
+jquerymobile , jquery 的事件程式 都是全部小寫
+
+注意寫程式的順序 ： jquery 後 , jquerymobile 前
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+	$(document).on("mobileinit" , mobileinitHandler);
+	
+	function mobileinitHandler(){
+		alert("");
+		
+		
+	}
+</script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+（7-1 !!!) 記憶體問題
+對話窗的時候 會用第一次舊有記憶體的 （因為結構相同） 他會使用之前的結構 （只塞資料） （先按3, 或先案1 就會樣子不同）
+第一個先做 , 要用 detail 時才會載入第二段的html 
+所以要更改成不同的結構 ,(加個什麼) 
+
+android 要先做了activity 才能載入 資料庫的程式 ,不然會閃退
+https://www.hackingwithswift.com/new-syntax-swift-2-error-handling-try-catch
+swift 2 :  try catch  : NSException
+記憶體的問題
+
+
+要乖乖用regular exception
+
+===(7-2)======
+吐司 : 會自己消失的對話窗 android
+聲音對動畫的效果
+
+API: 辨識工具
+http://bluenet.pixnet.net/blog/post/45682078-%E8%AA%9E%E9%9F%B3%E8%BE%A8%E8%AD%98%E3%80%81%E5%9C%96%E5%83%8F%E8%BE%A8%E8%AD%98%E2%80%A6%E7%AD%89%E5%90%84%E5%BC%8F%E5%A5%BD%E7%94%A8%E8%BE%A8%E8%AD%98%E5%B7%A5%E5%85%B7%E7%9A%84
+
+swift 的
+https://www.swiftmi.com/topic/96.html
+
+
+==========(7-8)======
+CSS :::
+全尺寸 ： 5 種尺寸
+margin: auto : 重直至中
+
+background :url(images/arrow_left.png) no-repeat  //可以塞三張圖
+css的志中 background  可以 background-position:left center ,right center, center center  
+所以 背景總共可以放9張圖
+
+IOS:
+手機不支援upsidedown (因為賈伯斯對於單手可以使用手機 而且按得到home 健)
+ipad 才有upsidedown
+所有手機home 建在上當作是錯誤操作 （不到頭轉）
+
+    	
+(7-9)
+home 左90
+home 上 180
+home 右 -90
+home 下 0
